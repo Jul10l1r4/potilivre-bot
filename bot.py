@@ -85,7 +85,7 @@ def admins(bot, update):
             username = "null"
         else:
             username = "→ @{}".format(username)
-            adms += "<a href=\"tg://user?id={id}\">{fname}</a> {username}\n".format(fname=adm.user.first_name,id=adm.user.id,username=username)
+            adms += f"<a href=\"tg://user?id={adm.user.id}\">{adm.user.first_name}</a> {username}\n"
     update.message.reply_html(adms)
 
 def error(bot, update, error):
